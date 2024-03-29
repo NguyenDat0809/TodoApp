@@ -5,6 +5,18 @@
 
     var url = Url.Action("GetModalPartial", "Home");
 
+    Modal modalDto = new()
+            {
+                Task = new()
+                {
+                    Description = "",
+                    DueDate = DateTime.Now,
+                    CategoryId = "",
+                    StatusId = "open"
+                },
+                Categories = ViewBag.Categories,
+                Statuses = ViewBag.Statuses
+            };
 }
 @model IEnumerable<ToDo>
 
@@ -39,10 +51,15 @@
                         <option value="all">All</option>
                     </select>
                 </div>
-                <button type="submit" class="btn h-50 mt-4 mx-1 btn-color-custom">Filter</button>
+                <button class="btn h-50 mt-4 mx-1 btn-color-custom">Filter</button>
                 <a asp-action="Index" asp-route-id="" class="btn h-50 mt-4 mx-1 btn-color-custom">Clear</a>
             </div>
         </form>
+    </div>
+
+    <!--edit form partial location after render value-->
+    <div id="place-form">
+        @Html.Partial("_ModalFormPartial", modalDto)
     </div>
 
     <div class="container-fluid">
@@ -83,8 +100,7 @@
                                     </button>
                                 </form>
 
-                                <!--edit form partial location after render value-->
-                                <div id="place-form"></div>
+
 
                                 <button title="Edit" class="btn btn-sm"
                                         onclick="showModal('@url', '@task.Id')">
@@ -121,9 +137,11 @@
 </div>
 
 @section Scripts {
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
     <script src="~/js/html-interaction.js"></script>
     <script src="~/js/script.js"></script>
 

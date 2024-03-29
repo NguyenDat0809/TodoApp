@@ -529,3 +529,6 @@ FodyWeavers.xsd
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,aspnetcore
 *.v2
 .vs/TodoApp/v17/.futdcache.v2
+.vs/ProjectEvaluation/todoapp.metadata.v7.bin
+.vs/ProjectEvaluation/todoapp.projects.v7.bin
+.vs/TodoApp/v17/.futdcache.v2

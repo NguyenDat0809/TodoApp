@@ -1,7 +1,4 @@
 ﻿
-$(function () {
-    setMinDateInput();
-});
 
 //modify date input with id: date-picker to only choose the day greater than Today
 function setMinDateInput() {

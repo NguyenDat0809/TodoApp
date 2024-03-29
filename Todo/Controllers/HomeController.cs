@@ -63,44 +63,58 @@ namespace Todo.Controllers
             var todos = query.OrderBy(t => t.DueDate).ToList();
             return View(todos);
         }
-        /// <summary>
-        /// The action redirect user to the add todo view
-        /// </summary>
-        /// <returns></returns>
-        //[HttpGet]
-        //public IActionResult Add()
-        //{
-        //    ViewBag.Categories = _context.Categories.ToList();
-        //    ViewBag.Statuses = _context.Statuses.ToList();
-        //    //create an empty model
-        //    var task = new ToDo()
-        //    {
-        //        StatusId = "open"
-        //    };
-        //    return View(task);
-        //}
 
-        /// <summary>
-        /// The action do the add action
-        /// </summary>
-        /// <returns></returns>
         [HttpPost]
         public IActionResult Add(ToDo task)
         {
+            var isValidAll = false;
             //if every validation is valid
             if (ModelState.IsValid)
             {
                 _context.ToDos.Add(task);
                 _context.SaveChanges();
+
+                //add invalid input to modal to show up
+                //modal.Task.Description = ModelState[];
+                isValidAll = true;
             }//if not, redirect to notify validation warning
+            var modal = GetModal();
+            modal.Task = task;
 
-            //all categories, status should be query again to show on add view again
-            ViewBag.Categories = _context.Categories.ToList();
-            ViewBag.Statuses = _context.Statuses.ToList();
-            //including input task last time to show what user input 
-            return RedirectToAction("Index", "Home");
+            //return PartialView("_ModalFormPartial", modal);
+            return Json(new { isValidAll = isValidAll });
+        }
 
+        [HttpPost]
+        public IActionResult Edit(ToDo task)
+        {
+            var isValidAll = false;
+            //if every validation is valid
+            if (ModelState.IsValid)
+            {
+                _context.ToDos.Update(task);
+                _context.SaveChanges();
 
+                //add invalid input to modal to show up
+                //modal.Task.Description = ModelState[];
+                isValidAll = true;
+            }//if not, redirect to notify validation warning
+            var modal = GetModal();
+            modal.Task = task;
+
+            //return PartialView("_ModalFormPartial", modal);
+            return Json(new { isValidAll = isValidAll });
+        }
+
+        [HttpPost]
+        public IActionResult CheckValidation(ToDo task)
+        {
+            var isValidAll = false;
+            if (ModelState.IsValid)
+            {
+                isValidAll = true;
+            }
+            return Json(new { isValidAll = isValidAll });
         }
 
 
@@ -173,12 +187,19 @@ namespace Todo.Controllers
             //create modal to return
             var modal = new Modal()
             {
+                Task = new()
+                {
+                    Description = "",
+                    DueDate = DateTime.Now,
+                    CategoryId = "",
+                    StatusId = "open"
+                },
                 Categories = _context.Categories.ToList(),
                 Statuses = _context.Statuses.ToList()
             };//in case of ADD - no selectId parameter
-            if(selectedId != null)
+            if (selectedId != null)
             {
-                var task =_context.ToDos.Find(selectedId);
+                var task = _context.ToDos.Find(selectedId);
                 modal.Task = task;
             }
             return modal;
@@ -187,18 +208,33 @@ namespace Todo.Controllers
         #endregion
 
         #region Call API
+        /// <summary>
+        /// action trả về Modal để sử dụng ở trong chức năng add hoặc edit.
+        /// Có 2 kiểu modal trả về
+        ///     1. nếu add thì trả về modal với task null
+        ///     2. nếu edit thì trả về modal với task được chọn
+        /// </summary>
+        /// <param name="selectedId"></param>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult GetModalAPI(int? selectedId = null)
         {
             var modal = GetModal(selectedId);
 
-            return Json(new { data = modal});
+            return Json(new { data = modal });
         }
+
+        /// <summary>
+        /// action trả về 1 partial view đã được đưa dữ liệu (modal) vào
+        /// </summary>
+        /// <param name="modal"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> GetModalPartial(Modal modal)
+        public IActionResult GetModalPartial(Modal modal)
         {
-            return PartialView("ModalFormPartial", modal);
+            return PartialView("_ModalFormPartial", modal);
         }
+
         #endregion
     }
 }

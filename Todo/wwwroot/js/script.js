@@ -1,4 +1,5 @@
-﻿//this function will be used for ADD/EDIT depend on id parameter
+﻿
+//this function will be used for ADD/EDIT depend on id parameter
 //ADD - id is null
 //Edit - id not null
 function showModal(url, id) {
@@ -15,8 +16,8 @@ function showModal(url, id) {
                 dataType: "html",
                 data: { modal: response.data },
                 success: function (data) {
-                    $('#place-form').html(data);
-                    $("#task-edit-modal").modal("show");
+                    //$('#place-form').html(data);
+                    $("#task-modal").modal("show");
                     console.log("xong");
                 }
             });
@@ -25,6 +26,28 @@ function showModal(url, id) {
 
             //});
             //console.log(response.data)
+        },
+        error: function (req, status, error) {
+            console.log(status);
+        }
+    });
+}
+
+//submit edit/add form validation check
+function CheckValidate(event) {
+
+    event.prevenDefault();
+    $.ajax({
+        type: "POST",
+        url: "Home/Add",
+        dataType: "json",
+        data: { task: $('#form-modal').serialize() },
+        success: function (response) {
+            if (!response.isValidAll)
+                $("#task-modal").modal("show");
+            else {
+                $(location).prop('href', 'http://stackoverflow.com')
+            }
         },
         error: function (req, status, error) {
             console.log(status);
