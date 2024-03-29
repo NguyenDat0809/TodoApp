@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\asp.net\\todoapp\\todo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\asp.net\\todoapp\\todo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -27,7 +27,7 @@
       "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\wwwroot\\js\\html-interaction.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\asp.net\\todoapp\\todo\\views\\home\\modalformpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\views\\home\\modalformpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\home\\modalformpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -78,8 +78,7 @@
               "RelativeToolTip": "Todo\\Views\\Home\\ModalFormPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-29T05:58:03.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-29T05:58:03.45Z"
             },
             {
               "$type": "Document",
@@ -91,8 +90,7 @@
               "RelativeToolTip": "Todo\\wwwroot\\js\\script.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-03-28T17:28:43.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-28T17:28:43.267Z"
             },
             {
               "$type": "Document",
@@ -104,8 +102,7 @@
               "RelativeToolTip": "Todo\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-21T14:48:34.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-21T14:48:34.325Z"
             },
             {
               "$type": "Document",
@@ -117,8 +114,7 @@
               "RelativeToolTip": "Todo\\wwwroot\\js\\html-interaction.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-03-28T09:17:49.071Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-28T09:17:49.071Z"
             },
             {
               "$type": "Document",
@@ -130,8 +126,7 @@
               "RelativeToolTip": "Todo\\Views\\Home\\ModalAddFormPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-27T03:45:51.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-27T03:45:51.717Z"
             },
             {
               "$type": "Document",
@@ -191,8 +186,7 @@
               "RelativeToolTip": "Todo\\Models\\DTO\\Modal.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T08:26:23.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-28T08:26:23.831Z"
             },
             {
               "$type": "Document",
