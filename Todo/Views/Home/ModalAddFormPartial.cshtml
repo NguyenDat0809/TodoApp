@@ -1,0 +1,62 @@
+﻿@using Todo.Models.DTO
+@model Modal
+@{
+    var task = Model.Task;
+}
+<div class="modal" tabindex="-1" id="task-add-modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!--
+
+            <div class="modal-header">
+                <h5 class="modal-title">Add Task</h5>
+            </div>
+            -->
+            <div class="modal-body">
+                <form id="modal-form" asp-action="Add" asp-controller="Home" method="post">
+
+                    <input type="hidden" value="@task?.Id??''"></input>
+                    <div class="mb-3">
+                        <label asp-for="@task.Description" class="form-label">Desciption</label>
+                        <input asp-for="@task.Description" class="form-control" />
+                        <span class="span-color-validation" asp-validation-for="@task.Description"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="@task.CategoryId" class="form-label">Category</label>
+                        <select asp-for="@task.CategoryId" class="form-select"
+                                asp-items="@(new SelectList(Model.Categories, "CategoryId", "Name"))">
+                            <option value=""></option>
+                        </select>
+                        <span class="span-color-validation" asp-validation-for="@task.CategoryId"></span>
+
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="@task.DueDate" class="form-label">Due Date: </label>
+                        <input id="date-picker"
+                               asp-for="@task.DueDate"
+                               class="form-control"
+                               type="date" />
+                        <span class="span-color-validation" asp-validation-for="@task.DueDate"></span>
+
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="@task.StatusId" class="form-label">Status: </label>
+                        <select asp-for="@task.StatusId" class="form-select"
+                                asp-items="@(new SelectList(Model.Statuses, "StatusId", "Name","open"))">
+                        </select>
+
+                    </div>
+                    <button class="btn btn-primary">Add</button>
+                    <span id="btn-modal-close"
+                          class="btn btn-primary"
+                          data-bs-dismiss="modal"
+                    >
+                        Cancle
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
