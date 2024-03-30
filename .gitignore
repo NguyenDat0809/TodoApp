@@ -527,3 +527,10 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,aspnetcore
+*.bin
+.vs/TodoApp/DesignTimeBuild/.dtbcache.v2
+.vs/TodoApp/v17/.futdcache.v2
+.vs/TodoApp/v17/.suo
+.vs/TodoApp/v17/DocumentLayout.json
+Todo/obj/Debug/net8.0/Todo.assets.cache
+Todo/obj/Debug/net8.0/Todo.csproj.FileListAbsolute.txt
