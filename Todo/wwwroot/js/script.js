@@ -2,30 +2,16 @@
 //this function will be used for ADD/EDIT depend on id parameter
 //ADD - id is null
 //Edit - id not null
-function showModal(url, id) {
+function showModal(url, title) {
     //use ajax to get Modal object with information for html tag and maybe a task according to id is null or not
     $.ajax({
         type: "GET",
-        url: '/Home/GetModalApi',
-        datatype: "json",
-        data: { selectedId: id },
-        success: function (response) {
-            $.ajax({
-                type: 'POST',
-                url: url,
-                dataType: "html",
-                data: { modal: response.data },
-                success: function (data) {
-                    //$('#place-form').html(data);
-                    $("#task-modal").modal("show");
-                    console.log("xong");
-                }
-            });
-            // console.log(response);
-
-
-            //});
-            //console.log(response.data)
+        url: url,
+        success: function (res) {
+            $('#form-modal .modal-body').html(res);
+            $("#form-modal .modal-title").html(title);
+            $('#form-modal').modal('show');
+            console.log("xong");
         },
         error: function (req, status, error) {
             console.log(status);
@@ -34,23 +20,35 @@ function showModal(url, id) {
 }
 
 //submit edit/add form validation check
-function CheckValidate(event) {
+checkValidate = form => {
+    var formData = new FormData(form); // Tạo đối tượng FormData từ form
+    try {
 
-    event.prevenDefault();
-    $.ajax({
-        type: "POST",
-        url: "Home/Add",
-        dataType: "json",
-        data: { task: $('#form-modal').serialize() },
-        success: function (response) {
-            if (!response.isValidAll)
-                $("#task-modal").modal("show");
-            else {
-                $(location).prop('href', 'http://stackoverflow.com')
+        $.ajax({
+            type: "POST",
+            url: 'Home/AddOrEdit',
+            data: formData, // Sử dụng đối tượng FormData đã tạo
+            processData: false,
+            contentType: false, // Thiết lập contentType là false để jQuery tự động xác định nó dựa trên đối tượng FormData
+            success: function (res) {
+                if (res.isValid) {
+                    $('#view-all').html(res.html);
+
+                    $('#form-modal .modal-body').html("");
+                    $("#form-modal .modal-title").html("");
+                    $('#form-modal').modal('hide');
+                } else {
+                    $('#form-modal .modal-body').html(res.html);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr.responseText);
             }
-        },
-        error: function (req, status, error) {
-            console.log(status);
-        }
-    });
+        });
+        return false; // để ngăn sự kiện submit mặc định của form
+    } catch (e) {
+        console.log(e);
+    }
 }
+
+

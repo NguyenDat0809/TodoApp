@@ -6,6 +6,7 @@ using System.Reflection.Metadata.Ecma335;
 using Todo.Models;
 using Todo.Models.DataAccess;
 using Todo.Models.DTO;
+using static Todo.Helper;
 
 namespace Todo.Controllers
 {
@@ -64,59 +65,6 @@ namespace Todo.Controllers
             return View(todos);
         }
 
-        [HttpPost]
-        public IActionResult Add(ToDo task)
-        {
-            var isValidAll = false;
-            //if every validation is valid
-            if (ModelState.IsValid)
-            {
-                _context.ToDos.Add(task);
-                _context.SaveChanges();
-
-                //add invalid input to modal to show up
-                //modal.Task.Description = ModelState[];
-                isValidAll = true;
-            }//if not, redirect to notify validation warning
-            var modal = GetModal();
-            modal.Task = task;
-
-            //return PartialView("_ModalFormPartial", modal);
-            return Json(new { isValidAll = isValidAll });
-        }
-
-        [HttpPost]
-        public IActionResult Edit(ToDo task)
-        {
-            var isValidAll = false;
-            //if every validation is valid
-            if (ModelState.IsValid)
-            {
-                _context.ToDos.Update(task);
-                _context.SaveChanges();
-
-                //add invalid input to modal to show up
-                //modal.Task.Description = ModelState[];
-                isValidAll = true;
-            }//if not, redirect to notify validation warning
-            var modal = GetModal();
-            modal.Task = task;
-
-            //return PartialView("_ModalFormPartial", modal);
-            return Json(new { isValidAll = isValidAll });
-        }
-
-        [HttpPost]
-        public IActionResult CheckValidation(ToDo task)
-        {
-            var isValidAll = false;
-            if (ModelState.IsValid)
-            {
-                isValidAll = true;
-            }
-            return Json(new { isValidAll = isValidAll });
-        }
-
 
         /// <summary>
         /// This action join all the filter from client and redirect to Index action to filter the todo task
@@ -172,6 +120,8 @@ namespace Todo.Controllers
 
             return RedirectToAction("Index", "Home", new { id = id });
         }
+
+
         //something cool - i want to discover
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -180,61 +130,66 @@ namespace Todo.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-
-        #region Other Function
-        public Modal GetModal(int? selectedId = null)
+        // GET: Home/AddOrEdit(Insert)
+        // GET: Home/AddOrEdit/5(Update)
+        [NoDirectAccess]
+        public async Task<IActionResult> AddOrEdit(int id)
         {
-            //create modal to return
-            var modal = new Modal()
+            var task = new ToDo()
             {
-                Task = new()
-                {
-                    Description = "",
-                    DueDate = DateTime.Now,
-                    CategoryId = "",
-                    StatusId = "open"
-                },
-                Categories = _context.Categories.ToList(),
-                Statuses = _context.Statuses.ToList()
-            };//in case of ADD - no selectId parameter
-            if (selectedId != null)
+                DueDate = DateTime.Now,
+            };
+            ViewBag.Categories = _context.Categories.ToList();
+            ViewBag.Statuses = _context.Statuses.ToList();
+            if (id != 0)
             {
-                var task = _context.ToDos.Find(selectedId);
-                modal.Task = task;
+                task = await _context.ToDos.FindAsync(id);
+                if (task == null)
+                    return NotFound();
             }
-            return modal;
+            return View(task);
         }
 
-        #endregion
-
-        #region Call API
-        /// <summary>
-        /// action trả về Modal để sử dụng ở trong chức năng add hoặc edit.
-        /// Có 2 kiểu modal trả về
-        ///     1. nếu add thì trả về modal với task null
-        ///     2. nếu edit thì trả về modal với task được chọn
-        /// </summary>
-        /// <param name="selectedId"></param>
-        /// <returns></returns>
-        [HttpGet]
-        public IActionResult GetModalAPI(int? selectedId = null)
-        {
-            var modal = GetModal(selectedId);
-
-            return Json(new { data = modal });
-        }
-
-        /// <summary>
-        /// action trả về 1 partial view đã được đưa dữ liệu (modal) vào
-        /// </summary>
-        /// <param name="modal"></param>
-        /// <returns></returns>
         [HttpPost]
-        public IActionResult GetModalPartial(Modal modal)
+        public async Task<IActionResult> AddOrEdit(ToDo todo)
         {
-            return PartialView("_ModalFormPartial", modal);
+            int id = todo?.Id ?? 0;
+
+            var filters = new Filters(null);
+            ViewBag.Filters = filters;
+            ViewBag.Categories = _context.Categories.ToList();
+            ViewBag.Statuses = _context.Statuses.ToList();
+            ViewBag.DueFilters = Filters.DueFilterValues;
+            var list = _context.ToDos
+                .Include(t => t.Category)
+                .Include(t => t.Status).ToList();
+
+            //add new
+            if (ModelState.IsValid)
+            {
+                if (id == 0)
+                {
+                    _context.ToDos.Add(todo);
+                    await _context.SaveChangesAsync();
+                }
+                //update
+                else
+                {
+                    _context.Update(todo);
+                    await _context.SaveChangesAsync();
+                }
+               
+                return Json(new { isValid = true, html = Helper.RenderRazorViewToString(this, "ViewAll", list) });
+              
+            }
+            else
+            {
+                //return with validation error task
+                return Json(new { isValid = false, html = Helper.RenderRazorViewToString(this, "AddOrEdit", todo) });
+            }
+            //html is the view with html with the same modal we use to call function
+            //The purpose is to show validation
         }
 
-        #endregion
     }
 }

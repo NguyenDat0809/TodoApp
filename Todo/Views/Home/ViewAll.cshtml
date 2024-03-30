@@ -1,0 +1,60 @@
+﻿
+@{
+    var display = "visible";
+}
+@model IEnumerable<ToDo>
+<div>
+    <table class="table">
+        <thead>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th class="w-25"></th>
+        </thead>
+        <tbody>
+            @foreach (ToDo task in Model)
+            {
+                string overdue = task.Overdue ? "bg-warning" : "";
+                <tr class="@overdue">
+                    <td class="overflow-hidden" style="width:300px;">
+                        @task.Description
+                    </td>
+                    <td>@task.Category.Name</td>
+                    <td>@task.DueDate?.ToShortDateString()</td>
+                    <td>@task.Status.Name</td>
+                    <td>
+                        <div class="d-flex align-content-center">
+
+                            @{
+                                if (@task.StatusId == "close")
+
+                                    display = "hidden";
+                                else
+                                    display = "visible";
+                            }
+                            <form style="visibility:@display" class="mr-1" asp-action="MarkCompleted" method="post" asp-route-id="@ViewBag.Filters.FilterString">
+
+                                <button title="Complete" type="submit" class="btn btn-sm" name="selectedId" value="@task.Id">
+                                    <i class="fa-solid fa-check-to-slot"></i>
+                                </button>
+                            </form>
+
+                            <button title="Edit" class="btn btn-sm"
+                                    onclick="showModal('@Url.Action("AddOrEdit", "Home", new{ id = task.Id}, Context.Request.Scheme)', 'Edit Task')">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+
+                            <form class="mr-1" asp-action="MarkCompleted" method="post" asp-route-id="@ViewBag.Filters.FilterString">
+                                <button title="Delete" class="btn btn-sm">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </form>
+
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
