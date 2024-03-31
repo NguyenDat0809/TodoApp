@@ -1,10 +1,13 @@
 ﻿
+//$(function(){
+//    addMinDateInput();
+//});
 
 //modify date input with id: date-picker to only choose the day greater than Today
-$(window).on("load", function () {
+ function addMinDateInput() {
     $("#date-picker").prop("min", function () {
-        return new Date().toJSON().Split("T")[0];
+        return new Date().toISOString().split("T")[0];
     });
-});
+};
 
 

@@ -29,6 +29,7 @@
         <div class="mb-3">
             <label asp-for="DueDate" class="form-label">Due Date: </label>
             <input id="date-picker"
+                   onclick="addMinDateInput()"
                    asp-for="DueDate"
                    class="form-control"
                    type="date"
