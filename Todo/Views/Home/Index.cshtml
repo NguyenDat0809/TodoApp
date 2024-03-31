@@ -38,8 +38,14 @@
                         <option value="all">All</option>
                     </select>
                 </div>
-                <button class="btn h-50 mt-4 mx-1 btn-color-custom">Filter</button>
-                <a asp-action="Index" asp-route-id="" class="btn h-50 mt-4 mx-1 btn-color-custom">Clear</a>
+                <div class="flex-fill p-2">
+                    <label class="form-label">Search</label>
+                    <input name="searchDes" class="form-control" />
+                </div>
+                <button type="submit" class="btn h-50 mt-4 mx-1 btn-color-custom"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <a asp-action="Index" asp-route-id="" class="btn h-50 mt-4 mx-1 btn-color-custom">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </a>
             </div>
         </form>
     </div>
@@ -47,7 +53,7 @@
     <div class="container-fluid">
         <!--Task List-->
         <div id="view-all">
-             @await Html.PartialAsync("ViewAll", Model)
+            @await Html.PartialAsync("ViewAll", Model)
         </div>
         <div class="d-flex justify-content-start align-items-center">
             <a class="btn btn-color-custom"

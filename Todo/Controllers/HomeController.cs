@@ -22,12 +22,14 @@ namespace Todo.Controllers
         }
 
 
+        #region Actions to render list and redirect to Index page
         /// <summary>
-        /// The action to show all Categories, Statuses and filter of Due which taken by static way in Filters class
+        /// Action to return index page with filtered list
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="searchDes"></param>
         /// <returns></returns>
-        public IActionResult Index(string id)
+        public IActionResult Index(string id, string searchDes)
         {
             var filters = new Filters(id);
             ViewBag.Filters = filters;
@@ -60,26 +62,34 @@ namespace Todo.Controllers
                 else if (filters.IsFuture)
                     query = query.Where(t => t.DueDate > DateTime.Today);
             }
-            //Returns a list from the most distant date to the latest date
-            var todos = query.OrderBy(t => t.DueDate).ToList();
+            //Returns list from the furthest distant date to the latest date
+            var todos = query.OrderByDescending(t => t.DueDate).ToList();
+
+            //if there is the specific search Description target, filter 
+            if (!string.IsNullOrEmpty(searchDes))
+            {
+                todos = todos.Where(x => x.Description.Contains(searchDes)).ToList();
+            }
             return View(todos);
         }
 
-
         /// <summary>
-        /// This action join all the filter from client and redirect to Index action to filter the todo task
+        /// Action to return filter elements for action Index
         /// </summary>
-        /// <param name="filter">get from form</param>
+        /// <param name="filter"></param>
+        /// <param name="searchDes"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Filter(string[] filter)
+        public IActionResult Filter(string[] filter, string searchDes)
         {
             string id = string.Join("-", filter);
-            return Redirect(Url.Action("Index", "Home", new { id = id }, HttpContext.Request.Scheme));
+            return RedirectToAction("Index", "Home", new { id = id, searchDes = searchDes.Trim() });
         }
+        #endregion
+
 
         /// <summary>
-        /// This action allow user to close todo task -> Status to "close", then redirect to home page with last filter
+        /// Action to mark task completed - StatusId - close
         /// </summary>
         /// <param name="id"></param>
         /// <param name="selected"></param>
@@ -97,11 +107,11 @@ namespace Todo.Controllers
                 _context.Update(selected);
                 _context.SaveChanges();
             }
-            return Redirect(Url.Action("Index", "Home", new { id = id }, HttpContext.Request.Scheme));
+            return RedirectToAction("Index", "Home", new { id = id });
         }
 
         /// <summary>
-        /// This action delete completed todo
+        /// Action to deleted completed (StatusId: close) 's task
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -113,12 +123,9 @@ namespace Todo.Controllers
             if (toDelete != null || toDelete.Count != 0)
             {
                 toDelete.ForEach(t => _context.ToDos.Remove(t));
-
                 _context.SaveChanges();
             }
-
-
-            return Redirect(Url.Action("Index", "Home", new { id = id }, HttpContext.Request.Scheme));
+            return RedirectToAction("Index", "Home", new { id = id });
         }
 
 
@@ -130,6 +137,7 @@ namespace Todo.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        #region Create and Add AJAX CALL
         // GET: Home/AddOrEdit(Insert)
         // GET: Home/AddOrEdit/5(Update)
         [NoDirectAccess]
@@ -178,9 +186,9 @@ namespace Todo.Controllers
                     _context.Update(todo);
                     await _context.SaveChangesAsync();
                 }
-               
+
                 return Json(new { isValid = true });
-              
+
             }
             else
             {
@@ -190,6 +198,7 @@ namespace Todo.Controllers
             //html is the view with html with the same modal we use to call function
             //The purpose is to show validation
         }
+        #endregion
 
     }
 }
