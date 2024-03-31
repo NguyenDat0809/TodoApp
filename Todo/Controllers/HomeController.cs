@@ -6,6 +6,7 @@ using System.Reflection.Metadata.Ecma335;
 using Todo.Models;
 using Todo.Models.DataAccess;
 using Todo.Models.DTO;
+using static Todo.Helper;
 
 namespace Todo.Controllers
 {
@@ -63,45 +64,6 @@ namespace Todo.Controllers
             var todos = query.OrderBy(t => t.DueDate).ToList();
             return View(todos);
         }
-        /// <summary>
-        /// The action redirect user to the add todo view
-        /// </summary>
-        /// <returns></returns>
-        //[HttpGet]
-        //public IActionResult Add()
-        //{
-        //    ViewBag.Categories = _context.Categories.ToList();
-        //    ViewBag.Statuses = _context.Statuses.ToList();
-        //    //create an empty model
-        //    var task = new ToDo()
-        //    {
-        //        StatusId = "open"
-        //    };
-        //    return View(task);
-        //}
-
-        /// <summary>
-        /// The action do the add action
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost]
-        public IActionResult Add(ToDo task)
-        {
-            //if every validation is valid
-            if (ModelState.IsValid)
-            {
-                _context.ToDos.Add(task);
-                _context.SaveChanges();
-            }//if not, redirect to notify validation warning
-
-            //all categories, status should be query again to show on add view again
-            ViewBag.Categories = _context.Categories.ToList();
-            ViewBag.Statuses = _context.Statuses.ToList();
-            //including input task last time to show what user input 
-            return RedirectToAction("Index", "Home");
-
-
-        }
 
 
         /// <summary>
@@ -113,7 +75,7 @@ namespace Todo.Controllers
         public IActionResult Filter(string[] filter)
         {
             string id = string.Join("-", filter);
-            return RedirectToAction("Index", "Home", new { id = id });
+            return Redirect(Url.Action("Index", "Home", new { id = id }, HttpContext.Request.Scheme));
         }
 
         /// <summary>
@@ -135,7 +97,7 @@ namespace Todo.Controllers
                 _context.Update(selected);
                 _context.SaveChanges();
             }
-            return RedirectToAction("Index", "Home", new { id = id });
+            return Redirect(Url.Action("Index", "Home", new { id = id }, HttpContext.Request.Scheme));
         }
 
         /// <summary>
@@ -156,8 +118,10 @@ namespace Todo.Controllers
             }
 
 
-            return RedirectToAction("Index", "Home", new { id = id });
+            return Redirect(Url.Action("Index", "Home", new { id = id }, HttpContext.Request.Scheme));
         }
+
+
         //something cool - i want to discover
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -166,39 +130,66 @@ namespace Todo.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-
-        #region Other Function
-        public Modal GetModal(int? selectedId = null)
+        // GET: Home/AddOrEdit(Insert)
+        // GET: Home/AddOrEdit/5(Update)
+        [NoDirectAccess]
+        public async Task<IActionResult> AddOrEdit(int id)
         {
-            //create modal to return
-            var modal = new Modal()
+            var task = new ToDo()
             {
-                Categories = _context.Categories.ToList(),
-                Statuses = _context.Statuses.ToList()
-            };//in case of ADD - no selectId parameter
-            if(selectedId != null)
+                DueDate = DateTime.Now,
+            };
+            ViewBag.Categories = _context.Categories.ToList();
+            ViewBag.Statuses = _context.Statuses.ToList();
+            if (id != 0)
             {
-                var task =_context.ToDos.Find(selectedId);
-                modal.Task = task;
+                task = await _context.ToDos.FindAsync(id);
+                if (task == null)
+                    return NotFound();
             }
-            return modal;
+            return View(task);
         }
 
-        #endregion
-
-        #region Call API
-        [HttpGet]
-        public IActionResult GetModalAPI(int? selectedId = null)
-        {
-            var modal = GetModal(selectedId);
-
-            return Json(new { data = modal});
-        }
         [HttpPost]
-        public async Task<IActionResult> GetModalPartial(Modal modal)
+        public async Task<IActionResult> AddOrEdit(ToDo todo)
         {
-            return PartialView("ModalFormPartial", modal);
+            int id = todo?.Id ?? 0;
+
+            var filters = new Filters(null);
+            ViewBag.Filters = filters;
+            ViewBag.Categories = _context.Categories.ToList();
+            ViewBag.Statuses = _context.Statuses.ToList();
+            ViewBag.DueFilters = Filters.DueFilterValues;
+            var list = _context.ToDos
+                .Include(t => t.Category)
+                .Include(t => t.Status).ToList();
+
+            //add new
+            if (ModelState.IsValid)
+            {
+                if (id == 0)
+                {
+                    _context.ToDos.Add(todo);
+                    await _context.SaveChangesAsync();
+                }
+                //update
+                else
+                {
+                    _context.Update(todo);
+                    await _context.SaveChangesAsync();
+                }
+               
+                return Json(new { isValid = true });
+              
+            }
+            else
+            {
+                //return with validation error task
+                return Json(new { isValid = false, html = Helper.RenderRazorViewToString(this, "AddOrEdit", todo) });
+            }
+            //html is the view with html with the same modal we use to call function
+            //The purpose is to show validation
         }
-        #endregion
+
     }
 }

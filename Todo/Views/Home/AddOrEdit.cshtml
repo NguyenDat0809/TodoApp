@@ -1,0 +1,58 @@
+﻿@using Todo.Models.DTO
+@model ToDo
+@{
+    Layout = null;
+    var task = Model;
+    // var addOrEditUrl = Url.Action("AddOrEdit", "Home");
+}
+<div>
+    <form id="form-modal" asp-action="AddOrEdit" asp-controller="Home" method="post" onsubmit="return checkValidate(this)" autocomplete="off">
+        <!--Id for edit task-->
+        <input type="hidden" asp-for="Id" value="@(task?.Id)" />
+        <!--description-->
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Desciption</label>
+            <input asp-for="Description" class="form-control" />
+            <span class="span-color-validation" asp-validation-for="Description"></span>
+        </div>
+        <!--Category-->
+        <div class="mb-3">
+            <label asp-for="CategoryId" class="form-label">Category</label>
+            <select asp-for="CategoryId" class="form-select"
+                    asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "Name", task?.CategoryId??""))">
+                <option value=""></option>
+            </select>
+            <span class="span-color-validation" asp-validation-for="CategoryId"></span>
+
+        </div>
+        <!--Due Date-->
+        <div class="mb-3">
+            <label asp-for="DueDate" class="form-label">Due Date: </label>
+            <input id="date-picker"
+                   asp-for="DueDate"
+                   class="form-control"
+                   type="date"
+                   value="@(task?.DueDate.Value.ToString("yyyy-MM-dd"))" />
+            <span class="span-color-validation" asp-validation-for="DueDate"></span>
+
+        </div>
+        <!--Status-->
+        <div class="mb-3">
+            <label asp-for="StatusId" class="form-label">Status: </label>
+            <select asp-for="StatusId" class="form-select"
+                    asp-items="@(new SelectList(ViewBag.Statuses, "StatusId", "Name",task?.StatusId??"open"))">
+            </select>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <span id="btn-modal-close"
+              class="btn btn-primary"
+              data-bs-dismiss="modal">
+            Cancle
+        </span>
+    </form>
+</div>
+
+
+
+

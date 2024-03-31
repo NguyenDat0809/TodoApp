@@ -2,8 +2,7 @@
 @{
     ViewData["Title"] = "DoIts";
     var display = "visible";
-
-    var url = Url.Action("GetModalPartial", "Home");
+    var url = Url.Action("AddOrEdit", "Home", null, Context.Request.Scheme);
 
 }
 @model IEnumerable<ToDo>
@@ -39,78 +38,23 @@
                         <option value="all">All</option>
                     </select>
                 </div>
-                <button type="submit" class="btn h-50 mt-4 mx-1 btn-color-custom">Filter</button>
+                <button class="btn h-50 mt-4 mx-1 btn-color-custom">Filter</button>
                 <a asp-action="Index" asp-route-id="" class="btn h-50 mt-4 mx-1 btn-color-custom">Clear</a>
             </div>
         </form>
     </div>
 
     <div class="container-fluid">
-
-        <table class="table">
-            <thead>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Due Date</th>
-            <th>Status</th>
-            <th class="w-25"></th>
-            </thead>
-            <tbody>
-                @foreach (ToDo task in Model)
-                {
-                    string overdue = task.Overdue ? "bg-warning" : "";
-                    <tr class="@overdue">
-                        <td class="overflow-hidden" style="width:300px;">
-                            @task.Description
-                        </td>
-                        <td>@task.Category.Name</td>
-                        <td>@task.DueDate?.ToShortDateString()</td>
-                        <td>@task.Status.Name</td>
-                        <td>
-                            <div class="d-flex align-content-center">
-
-                                @{
-                                    if (@task.StatusId == "close")
-
-                                        display = "hidden";
-                                    else
-                                        display = "visible";
-                                }
-                                <form style="visibility:@display" class="mr-1" asp-action="MarkCompleted" method="post" asp-route-id="@ViewBag.Filters.FilterString">
-
-                                    <button title="Complete" type="submit" class="btn btn-sm" name="selectedId" value="@task.Id">
-                                        <i class="fa-solid fa-check-to-slot"></i>
-                                    </button>
-                                </form>
-
-                                <!--edit form partial location after render value-->
-                                <div id="place-form"></div>
-
-                                <button title="Edit" class="btn btn-sm"
-                                        onclick="showModal('@url', '@task.Id')">
-                                    <i class="fa-regular fa-pen-to-square"></i>
-                                </button>
-
-
-                                <form class="mr-1" asp-action="MarkCompleted" method="post" asp-route-id="@ViewBag.Filters.FilterString">
-                                    <button title="Delete" class="btn btn-sm">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </form>
-
-                            </div>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
+        <!--Task List-->
+        <div id="view-all">
+             @await Html.PartialAsync("ViewAll", Model)
+        </div>
         <div class="d-flex justify-content-start align-items-center">
-            <button class="btn btn-color-custom"
-                    style="color:#dc4c3e;"
-                    onclick="showModal('@url', @null)">
+            <a class="btn btn-color-custom"
+               style="color:#dc4c3e;"
+               onclick="showModal('@url', 'New Task')">
                 Add new
-            </button>
+            </a>
             <div class="p-2">
                 <form asp-action="DeleteCompleted" method="post" asp-route-id="@ViewBag.Filters.FilterString">
                     <button type="submit" class="btn btn-color-custom no-wrap">Delete completed tasks</button>
@@ -124,9 +68,9 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
     <script src="~/js/html-interaction.js"></script>
     <script src="~/js/script.js"></script>
-
 }
 
 
