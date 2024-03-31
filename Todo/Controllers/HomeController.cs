@@ -75,7 +75,7 @@ namespace Todo.Controllers
         public IActionResult Filter(string[] filter)
         {
             string id = string.Join("-", filter);
-            return RedirectToAction("Index", "Home", new { id = id });
+            return Redirect(Url.Action("Index", "Home", new { id = id }, HttpContext.Request.Scheme));
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Todo.Controllers
                 _context.Update(selected);
                 _context.SaveChanges();
             }
-            return RedirectToAction("Index", "Home", new { id = id });
+            return Redirect(Url.Action("Index", "Home", new { id = id }, HttpContext.Request.Scheme));
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Todo.Controllers
             }
 
 
-            return RedirectToAction("Index", "Home", new { id = id });
+            return Redirect(Url.Action("Index", "Home", new { id = id }, HttpContext.Request.Scheme));
         }
 
 
@@ -179,7 +179,7 @@ namespace Todo.Controllers
                     await _context.SaveChangesAsync();
                 }
                
-                return Json(new { isValid = true, html = Helper.RenderRazorViewToString(this, "ViewAll", list) });
+                return Json(new { isValid = true });
               
             }
             else

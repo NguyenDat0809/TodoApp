@@ -26,17 +26,17 @@ checkValidate = form => {
 
         $.ajax({
             type: "POST",
-            url: 'Home/AddOrEdit',
+            url: '/Home/AddOrEdit',
             data: formData, // Sử dụng đối tượng FormData đã tạo
             processData: false,
             contentType: false, // Thiết lập contentType là false để jQuery tự động xác định nó dựa trên đối tượng FormData
             success: function (res) {
                 if (res.isValid) {
-                    $('#view-all').html(res.html);
-
-                    $('#form-modal .modal-body').html("");
-                    $("#form-modal .modal-title").html("");
-                    $('#form-modal').modal('hide');
+                    //$('#view-all').html(res.html);
+                    location.reload(true);
+                    //$('#form-modal .modal-body').html("");
+                    //$("#form-modal .modal-title").html("");
+                    //$('#form-modal').modal('hide');
                 } else {
                     $('#form-modal .modal-body').html(res.html);
                 }

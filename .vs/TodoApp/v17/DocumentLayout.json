@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\asp.net\\todoapp\\todo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\asp.net\\todoapp\\todo\\wwwroot\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\wwwroot\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\wwwroot\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\models\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\models\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\views\\home\\viewall.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\home\\viewall.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\asp.net\\todoapp\\todo\\views\\home\\addoredit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\home\\addoredit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\wwwroot\\js\\html-interaction.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -27,16 +23,16 @@
       "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\asp.net\\todoapp\\todo\\views\\home\\addoredit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\home\\addoredit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\asp.net\\todoapp\\todo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\models\\dto\\modal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\models\\dto\\modal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\models\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\models\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\models\\dao\\tododbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,9 +61,22 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1814,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 1641,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddOrEdit.cshtml",
+              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\AddOrEdit.cshtml",
+              "RelativeDocumentMoniker": "Todo\\Views\\Home\\AddOrEdit.cshtml",
+              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\AddOrEdit.cshtml",
+              "RelativeToolTip": "Todo\\Views\\Home\\AddOrEdit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-31T00:16:54.051Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -76,27 +85,26 @@
               "RelativeDocumentMoniker": "Todo\\wwwroot\\js\\script.js",
               "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\wwwroot\\js\\script.js",
               "RelativeToolTip": "Todo\\wwwroot\\js\\script.js",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAqwCEAAAAQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-03-28T17:28:43.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Todo\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Todo\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAACEAAAAAAAAAAAAkwDQAAAArAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-21T14:48:34.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-21T14:48:34.325Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "html-interaction.js",
               "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\wwwroot\\js\\html-interaction.js",
               "RelativeDocumentMoniker": "Todo\\wwwroot\\js\\html-interaction.js",
@@ -115,7 +123,7 @@
               "RelativeDocumentMoniker": "Todo\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Todo\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAJoAAAAAAAAAAAAjwLUAAAAyAAAA",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAuwLAAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-27T02:39:46.213Z",
               "EditorCaption": ""
@@ -123,8 +131,8 @@
           ]
         },
         {
-          "DockedWidth": 1411,
-          "SelectedChildIndex": 13,
+          "DockedWidth": 1584,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -144,45 +152,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ViewAll.cshtml",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\ViewAll.cshtml",
-              "RelativeDocumentMoniker": "Todo\\Views\\Home\\ViewAll.cshtml",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\ViewAll.cshtml",
-              "RelativeToolTip": "Todo\\Views\\Home\\ViewAll.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACMAAACaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-30T10:11:31.372Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AddOrEdit.cshtml",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\AddOrEdit.cshtml",
-              "RelativeDocumentMoniker": "Todo\\Views\\Home\\AddOrEdit.cshtml",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\AddOrEdit.cshtml",
-              "RelativeToolTip": "Todo\\Views\\Home\\AddOrEdit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-30T09:50:10.997Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Todo\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Todo\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAABUAAAAGAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACMAAABsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-28T10:02:50.044Z"
+              "WhenOpened": "2024-03-28T10:02:50.044Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "Modal.cs",
               "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\DTO\\Modal.cs",
               "RelativeDocumentMoniker": "Todo\\Models\\DTO\\Modal.cs",
@@ -194,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "style.css",
               "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "Todo\\wwwroot\\css\\style.css",
@@ -206,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "ToDoDBContext.cs",
               "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\DAO\\ToDoDBContext.cs",
               "RelativeDocumentMoniker": "Todo\\Models\\DAO\\ToDoDBContext.cs",
@@ -218,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "ToDo.cs",
               "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\ToDo.cs",
               "RelativeDocumentMoniker": "Todo\\Models\\ToDo.cs",
@@ -230,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\Category.cs",
               "RelativeDocumentMoniker": "Todo\\Models\\Category.cs",
@@ -242,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "Status.cs",
               "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\Status.cs",
               "RelativeDocumentMoniker": "Todo\\Models\\Status.cs",
@@ -254,16 +237,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Filters.cs",
               "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\Filters.cs",
               "RelativeDocumentMoniker": "Todo\\Models\\Filters.cs",
               "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\Filters.cs",
               "RelativeToolTip": "Todo\\Models\\Filters.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAWAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T02:49:42.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-27T02:49:42.364Z"
             }
           ]
         }
