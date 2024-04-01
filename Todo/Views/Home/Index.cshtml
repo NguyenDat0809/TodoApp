@@ -1,9 +1,10 @@
-﻿@using Todo.Models.DTO
+﻿@using Microsoft.AspNetCore.WebUtilities
+@using Todo.Models
 @{
     ViewData["Title"] = "DoIts";
     var display = "visible";
     var url = Url.Action("AddOrEdit", "Home", null, Context.Request.Scheme);
-
+    var indexWithTargetPageUrl = Url.Action("FilterPaging", "Home", null);
 }
 @model IEnumerable<ToDo>
 
@@ -54,6 +55,38 @@
         <!--Task List-->
         <div id="view-all">
             @await Html.PartialAsync("ViewAll", Model)
+            <!--Paging-->
+            <div class="">
+                <nav aria-label="page navigation" class="d-flex justify-content-sm-end">
+                    <ul class="pagination text-decoration-none">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        @{
+                            // Giả sử 'FilterParams' là một model chứa các giá trị filter được gửi từ form
+                            var filterParams = ViewBag.Filters;
+
+                            // Tạo URL với các tham số filter
+                            var link = QueryHelpers.AddQueryString(indexWithTargetPageUrl, "filterString", ViewBag.Filters.FilterString);
+                            link = QueryHelpers.AddQueryString(link, "searchDes", ViewBag.Filters.SearchDes);
+                            for (int i = 1; i <= ViewBag.TotalPage; i++)
+                            {
+                                var pagingLink = QueryHelpers.AddQueryString(link, "pageIndex", i.ToString());
+                                // Thêm thẻ <li> với link đã tạo
+                                <li class="page-item"><a class="page-link" href="@pagingLink">@i</a></li>
+                            }
+                        }
+
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
         <div class="d-flex justify-content-start align-items-center">
             <a class="btn btn-color-custom"

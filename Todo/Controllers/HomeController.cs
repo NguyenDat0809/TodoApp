@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Reflection.Metadata.Ecma335;
 using Todo.Models;
 using Todo.Models.DataAccess;
-using Todo.Models.DTO;
 using static Todo.Helper;
 
 namespace Todo.Controllers
@@ -29,9 +26,10 @@ namespace Todo.Controllers
         /// <param name="id"></param>
         /// <param name="searchDes"></param>
         /// <returns></returns>
-        public IActionResult Index(string id, string searchDes)
+        public IActionResult Index(string id, string searchDes, string pageIndex)
         {
-            var filters = new Filters(id);
+            #region Initialize Filters to hole information and setup information for View
+            var filters = new Filters(id, searchDes, pageIndex);
             ViewBag.Filters = filters;
             //get all catergories(1)
             ViewBag.Categories = _context.Categories.ToList();
@@ -43,7 +41,9 @@ namespace Todo.Controllers
             IQueryable<ToDo> query = _context.ToDos
                 .Include(t => t.Category)
                 .Include(t => t.Status);
+            #endregion
 
+            #region Filter the information for showing objective list
             //check filter to filter the content from (1)(2)(3)(4)
             if (filters.HasCategory)
                 query = query.Where(t => t.CategoryId == filters.CategoryId);
@@ -66,10 +66,20 @@ namespace Todo.Controllers
             var todos = query.OrderByDescending(t => t.DueDate).ToList();
 
             //if there is the specific search Description target, filter 
-            if (!string.IsNullOrEmpty(searchDes))
+            if (!string.IsNullOrEmpty(filters.SearchDes))
             {
-                todos = todos.Where(x => x.Description.Contains(searchDes)).ToList();
+                todos = todos.Where(x => x.Description.Contains(filters.SearchDes)).ToList();
             }
+            #endregion
+
+            #region Filter according to current page
+            var recoredSize = 5;
+            int targetPage = filters.CurrentPage;
+            int totalPage = (int)Math.Ceiling(todos.Count / (double)recoredSize);
+            ViewBag.TotalPage = totalPage;
+            todos = todos.Skip((targetPage - 1) * recoredSize).Take(recoredSize).ToList();
+            #endregion
+
             return View(todos);
         }
 
@@ -79,11 +89,22 @@ namespace Todo.Controllers
         /// <param name="filter"></param>
         /// <param name="searchDes"></param>
         /// <returns></returns>
+        [HttpGet]
+        public IActionResult FilterPaging(string filterString, string? searchDes = null, string? pageIndex = null)
+        {
+            return RedirectToAction("Index", "Home", new { id = filterString, searchDes = searchDes, pageIndex = pageIndex });
+        }
+        /// <summary>
+        /// Action to return filter elements for action Index
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="searchDes"></param>
+        /// <returns></returns>
         [HttpPost]
-        public IActionResult Filter(string[] filter, string searchDes)
+        public IActionResult Filter(string[] filter, string? searchDes = null, string? pageIndex = null)
         {
             string id = string.Join("-", filter);
-            return RedirectToAction("Index", "Home", new { id = id, searchDes = searchDes.Trim() });
+            return RedirectToAction("Index", "Home", new { id = id, searchDes = searchDes.Trim(), pageIndex = pageIndex });
         }
         #endregion
 
@@ -151,7 +172,7 @@ namespace Todo.Controllers
             ViewBag.Statuses = _context.Statuses.ToList();
             if (id != 0)
             {
-                task = await _context.ToDos.FindAsync(id);
+                task = _context.ToDos.Find(id);
                 if (task == null)
                     return NotFound();
             }
@@ -168,9 +189,9 @@ namespace Todo.Controllers
             ViewBag.Categories = _context.Categories.ToList();
             ViewBag.Statuses = _context.Statuses.ToList();
             ViewBag.DueFilters = Filters.DueFilterValues;
-            var list = _context.ToDos
-                .Include(t => t.Category)
-                .Include(t => t.Status).ToList();
+            //var list = _context.ToDos
+            //    .Include(t => t.Category)
+            //    .Include(t => t.Status).ToList();
 
             //add new
             if (ModelState.IsValid)
@@ -178,13 +199,13 @@ namespace Todo.Controllers
                 if (id == 0)
                 {
                     _context.ToDos.Add(todo);
-                    await _context.SaveChangesAsync();
+                    _context.SaveChanges();
                 }
                 //update
                 else
                 {
-                    _context.Update(todo);
-                    await _context.SaveChangesAsync();
+                    _context.ToDos.Update(todo);
+                    _context.SaveChanges();
                 }
 
                 return Json(new { isValid = true });
