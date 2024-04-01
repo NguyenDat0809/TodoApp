@@ -1,9 +1,10 @@
-﻿@using Todo.Models.DTO
+﻿@using Microsoft.AspNetCore.WebUtilities
+@using Todo.Models
 @{
     ViewData["Title"] = "DoIts";
     var display = "visible";
     var url = Url.Action("AddOrEdit", "Home", null, Context.Request.Scheme);
-
+    var indexWithTargetPageUrl = Url.Action("FilterPaging", "Home", null);
 }
 @model IEnumerable<ToDo>
 
@@ -38,8 +39,14 @@
                         <option value="all">All</option>
                     </select>
                 </div>
-                <button class="btn h-50 mt-4 mx-1 btn-color-custom">Filter</button>
-                <a asp-action="Index" asp-route-id="" class="btn h-50 mt-4 mx-1 btn-color-custom">Clear</a>
+                <div class="flex-fill p-2">
+                    <label class="form-label">Search</label>
+                    <input name="searchDes" class="form-control" />
+                </div>
+                <button type="submit" class="btn h-50 mt-4 mx-1 btn-color-custom"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <a asp-action="Index" asp-route-id="" class="btn h-50 mt-4 mx-1 btn-color-custom">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </a>
             </div>
         </form>
     </div>
@@ -47,7 +54,50 @@
     <div class="container-fluid">
         <!--Task List-->
         <div id="view-all">
-             @await Html.PartialAsync("ViewAll", Model)
+            @await Html.PartialAsync("ViewAll", Model)
+            <!--Paging-->
+            <div class="">
+                <nav aria-label="page navigation" class="d-flex justify-content-sm-end">
+                    <ul class="pagination text-decoration-none">
+                        @{
+                            //create the url to indexPage 1
+                            // 'FilterParams' is a model to holde Filters instance
+                            var filterParams = ViewBag.Filters;
+
+                            //create origin link with parameters: filter, searchDes (all links have both parameters) 
+                            var originLink = QueryHelpers.AddQueryString(indexWithTargetPageUrl, "filterString", ViewBag.Filters.FilterString);
+                            originLink = QueryHelpers.AddQueryString(originLink, "searchDes", ViewBag.Filters.SearchDes);
+
+                            //create first Page index url
+                            var firstPageUrl = QueryHelpers.AddQueryString(originLink, "pageIndex", "1");
+
+                            //create the last page index url
+                            var lastPageUrl = QueryHelpers.AddQueryString(originLink, "pageIndex", ViewBag.TotalPage.ToString());
+                        }
+                        <li class="page-item">
+                            <a class="page-link" href="@firstPageUrl" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        @{
+                           
+                            
+                            for (int i = 1; i <= ViewBag.TotalPage; i++)
+                            {
+                                var pagingLink = QueryHelpers.AddQueryString(originLink, "pageIndex", i.ToString());
+                                //create <li/> with created link
+                                <li class="page-item"><a class="page-link" href="@pagingLink">@i</a></li>
+                            }
+                        }
+
+                        <li class="page-item">
+                            <a class="page-link" href="@lastPageUrl" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
         <div class="d-flex justify-content-start align-items-center">
             <a class="btn btn-color-custom"

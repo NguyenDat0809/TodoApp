@@ -31,7 +31,7 @@
                                     <i class="fas fa-bars" style="margin:5px 0px 0px 0px;"></i>
                                 </span>
                             </button>
-                            
+
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class='nav-item' onclick="showModal('@(Url.Action("AddOrEdit", "Home", null, Context.Request.Scheme))', 'New Task')">
@@ -71,6 +71,23 @@
         </div>
     </div>
 
+    <!--confirm delete modal-->
+    <div class="modal" tabindex="-1" id="confirm-delete-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Are you sure ?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirmYes" class="btn btn-danger">
+                        Yes
+                    </button>
+                    <button id="confirmNo" class="btn btn-secondary">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     <!-- Bootstrap -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"

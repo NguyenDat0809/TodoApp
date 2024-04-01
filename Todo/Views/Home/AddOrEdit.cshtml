@@ -1,4 +1,4 @@
-﻿@using Todo.Models.DTO
+﻿@using Todo.Models
 @model ToDo
 @{
     Layout = null;
@@ -28,12 +28,19 @@
         <!--Due Date-->
         <div class="mb-3">
             <label asp-for="DueDate" class="form-label">Due Date: </label>
+            @{
+                // Giả sử task.DueDate là một DateTime?
+                var dueDate = task?.DueDate.Value;
+                var formattedDate = dueDate.HasValue ? dueDate.Value.ToString("yyyy-MM-dd hh:mm") : string.Empty;
+            }
+
             <input id="date-picker"
-                   onclick="addMinDateInput()"
                    asp-for="DueDate"
                    class="form-control"
-                   type="date"
-                   value="@(task?.DueDate.Value.ToString("yyyy-MM-dd"))" />
+                   type="datetime-local"
+                   onclick="addMinDateInput()"
+                   value="@formattedDate" />
+
             <span class="span-color-validation" asp-validation-for="DueDate"></span>
 
         </div>
