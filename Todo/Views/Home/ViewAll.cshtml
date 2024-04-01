@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     var display = "visible";
 }
 @model IEnumerable<ToDo>
@@ -14,7 +13,7 @@
         </thead>
         <tbody>
             @{
-                if(Model.Count() == 0)
+                if (Model.Count() == 0)
                 {
                     <tr class="text-center">
                         <td id="no-data-table" class="table-active">No Data Available</td>
@@ -29,7 +28,7 @@
                                 @task.Description
                             </td>
                             <td>@task.Category.Name</td>
-                            <td>@task.DueDate?.ToShortDateString()</td>
+                            <td class="text-nowrap">@task.DueDate?.ToString("dd-MM-yyyy HH:mm")</td>
                             <td>@task.Status.Name</td>
                             <td>
                                 <div class="d-flex align-content-center">
@@ -53,11 +52,17 @@
                                         <i class="fa-regular fa-pen-to-square"></i>
                                     </button>
 
-                                    <form class="mr-1" asp-action="MarkCompleted" method="post" asp-route-id="@ViewBag.Filters.FilterString">
-                                        <button title="Delete" class="btn btn-sm">
+                                    <form class="mr-1 confirm-form"
+                                          method="post"
+                                          asp-action="Delete"
+                                          asp-route-id="@ViewBag.Filters.FilterString"
+                                          id="deleteOne-@task.Id">
+                                        <input type="hidden" name="selectedId" value="@(task.Id)" />
+                                        <button title="Delete" type="submit" class="btn btn-sm" >
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </form>
+
 
                                 </div>
                             </td>

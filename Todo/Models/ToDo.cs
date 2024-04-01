@@ -25,6 +25,6 @@ namespace Todo.Models
         [ValidateNever] //no need to validate
         public Status Status { get; set; }
 
-        public bool Overdue => StatusId == "open" && DueDate < DateTime.Today;
+        public bool Overdue => StatusId == "open" && DueDate < DateTime.Now;
     }
 }

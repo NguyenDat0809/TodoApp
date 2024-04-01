@@ -56,11 +56,11 @@ namespace Todo.Controllers
                 var today = DateTime.Today;
                 //check past/today/future
                 if (filters.IsPast)
-                    query = query.Where(t => t.DueDate < DateTime.Today);
+                    query = query.Where(t => t.DueDate < DateTime.Now);
                 else if (filters.IsToday)
-                    query = query.Where(t => t.DueDate == DateTime.Today);
+                    query = query.Where(t => t.DueDate == DateTime.Now);
                 else if (filters.IsFuture)
-                    query = query.Where(t => t.DueDate > DateTime.Today);
+                    query = query.Where(t => t.DueDate > DateTime.Now);
             }
             //Returns list from the furthest distant date to the latest date
             var todos = query.OrderByDescending(t => t.DueDate).ToList();
@@ -156,7 +156,7 @@ namespace Todo.Controllers
         /// <param name="selectedId"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Delete([FromRoute] string id, string selectedId)
+        public IActionResult Delete([FromRoute] string id, int selectedId)
         {
             //get all todo having status "closed" -> completed
             var toDelete = _context.ToDos.Find(selectedId);

@@ -59,28 +59,39 @@
             <div class="">
                 <nav aria-label="page navigation" class="d-flex justify-content-sm-end">
                     <ul class="pagination text-decoration-none">
+                        @{
+                            //create the url to indexPage 1
+                            // 'FilterParams' is a model to holde Filters instance
+                            var filterParams = ViewBag.Filters;
+
+                            //create origin link with parameters: filter, searchDes (all links have both parameters) 
+                            var originLink = QueryHelpers.AddQueryString(indexWithTargetPageUrl, "filterString", ViewBag.Filters.FilterString);
+                            originLink = QueryHelpers.AddQueryString(originLink, "searchDes", ViewBag.Filters.SearchDes);
+
+                            //create first Page index url
+                            var firstPageUrl = QueryHelpers.AddQueryString(originLink, "pageIndex", "1");
+
+                            //create the last page index url
+                            var lastPageUrl = QueryHelpers.AddQueryString(originLink, "pageIndex", ViewBag.TotalPage.ToString());
+                        }
                         <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
+                            <a class="page-link" href="@firstPageUrl" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
                         @{
-                            // Giả sử 'FilterParams' là một model chứa các giá trị filter được gửi từ form
-                            var filterParams = ViewBag.Filters;
-
-                            // Tạo URL với các tham số filter
-                            var link = QueryHelpers.AddQueryString(indexWithTargetPageUrl, "filterString", ViewBag.Filters.FilterString);
-                            link = QueryHelpers.AddQueryString(link, "searchDes", ViewBag.Filters.SearchDes);
+                           
+                            
                             for (int i = 1; i <= ViewBag.TotalPage; i++)
                             {
-                                var pagingLink = QueryHelpers.AddQueryString(link, "pageIndex", i.ToString());
-                                // Thêm thẻ <li> với link đã tạo
+                                var pagingLink = QueryHelpers.AddQueryString(originLink, "pageIndex", i.ToString());
+                                //create <li/> with created link
                                 <li class="page-item"><a class="page-link" href="@pagingLink">@i</a></li>
                             }
                         }
 
                         <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
+                            <a class="page-link" href="@lastPageUrl" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>

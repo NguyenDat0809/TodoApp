@@ -51,4 +51,31 @@ checkValidate = form => {
     }
 }
 
+// Gắn sự kiện submit cho tất cả các form có lớp 'confirm-form'
+$('.confirm-form').on('submit', function (e) {
+    e.preventDefault(); // Ngăn chặn việc submit form tự động
+
+    var formId = $(this).attr('id'); // Lấy ID của form
+
+    // Hiển thị modal xác nhận
+    $('#confirm-delete-modal').modal('show');
+
+    // Xử lý khi người dùng bấm 'Yes'
+    $('#confirmYes').on('click', function () {
+        // Đóng modal
+        $('#confirm-delete-modal').modal('hide');
+
+        // Submit form thủ công với ID cụ thể
+        $('#' + formId).off('submit').submit();
+    });
+
+    // Xử lý khi người dùng bấm 'No'
+    $('#confirmNo').on('click', function () {
+        // Đóng modal
+        $('#confirm-delete-modal').modal('hide');
+    });
+});
+
+
+
 
