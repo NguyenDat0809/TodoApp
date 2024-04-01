@@ -132,7 +132,7 @@ namespace Todo.Controllers
         }
 
         /// <summary>
-        /// Action to deleted completed (StatusId: close) 's task
+        /// Action to deleted completed (StatusId: close) tasks
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -149,14 +149,33 @@ namespace Todo.Controllers
             return RedirectToAction("Index", "Home", new { id = id });
         }
 
+        /// <summary>
+        /// Action to delete specific task
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="selectedId"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult Delete([FromRoute] string id, string selectedId)
+        {
+            //get all todo having status "closed" -> completed
+            var toDelete = _context.ToDos.Find(selectedId);
+            if (toDelete != null)
+            {
+                _context.ToDos.Remove(toDelete);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index", "Home", new { id = id });
+        }
+
 
         //something cool - i want to discover
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public IActionResult Error()
+        //{
+        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        //}
 
         #region Create and Add AJAX CALL
         // GET: Home/AddOrEdit(Insert)
