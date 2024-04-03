@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Doits</title>
+    <title>@ViewData["Title"] Doits</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
 
-    <link rel="icon" type="image/png" href="~/todo.ico" sizes="32x32">
+    <link rel="icon" type="image/png" href="~/todo-list.ico" sizes="32x32">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css"
@@ -35,7 +35,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class='nav-item' onclick="showModal('@(Url.Action("AddOrEdit", "Home", null, Context.Request.Scheme))', 'New Task')">
-                                        <span class='nav-link' style="color:#dc4c3e;">
+                                        <span class='nav-link' style="color: #dc4c3e;">
                                             <i class="fa-solid fa-circle-plus"></i> Add task
                                         </span>
                                     </li>

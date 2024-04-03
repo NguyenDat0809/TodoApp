@@ -7,12 +7,12 @@ using static Todo.Helper;
 
 namespace Todo.Controllers
 {
-    public class HomeController : Controller
+    public class ToDoController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ToDoController> _logger;
         private readonly ToDoDBContext _context;
 
-        public HomeController(ILogger<HomeController> logger, ToDoDBContext context)
+        public ToDoController(ILogger<ToDoController> logger, ToDoDBContext context)
         {
             _logger = logger;
             _context = context;
@@ -92,7 +92,7 @@ namespace Todo.Controllers
         [HttpGet]
         public IActionResult FilterPaging(string filterString, string? searchDes = null, string? pageIndex = null)
         {
-            return RedirectToAction("Index", "Home", new { id = filterString, searchDes = searchDes, pageIndex = pageIndex });
+            return RedirectToAction("Index", "ToDo", new { id = filterString, searchDes = searchDes, pageIndex = pageIndex });
         }
         /// <summary>
         /// Action to return filter elements for action Index
@@ -104,7 +104,7 @@ namespace Todo.Controllers
         public IActionResult Filter(string[] filter, string? searchDes = null, string? pageIndex = null)
         {
             string id = string.Join("-", filter);
-            return RedirectToAction("Index", "Home", new { id = id, searchDes = searchDes.Trim(), pageIndex = pageIndex });
+            return RedirectToAction("Index", "ToDo", new { id = id, searchDes = searchDes.Trim(), pageIndex = pageIndex });
         }
         #endregion
 
@@ -128,7 +128,7 @@ namespace Todo.Controllers
                 _context.Update(selected);
                 _context.SaveChanges();
             }
-            return RedirectToAction("Index", "Home", new { id = id });
+            return RedirectToAction("Index", "ToDo", new { id = id });
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Todo.Controllers
                 toDelete.ForEach(t => _context.ToDos.Remove(t));
                 _context.SaveChanges();
             }
-            return RedirectToAction("Index", "Home", new { id = id });
+            return RedirectToAction("Index", "ToDo", new { id = id });
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Todo.Controllers
                 _context.ToDos.Remove(toDelete);
                 _context.SaveChanges();
             }
-            return RedirectToAction("Index", "Home", new { id = id });
+            return RedirectToAction("Index", "ToDo", new { id = id });
         }
 
 

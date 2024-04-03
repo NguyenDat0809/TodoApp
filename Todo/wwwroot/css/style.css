@@ -1,4 +1,4 @@
-
+﻿
 
 * {
     background-size: cover;
@@ -14,8 +14,8 @@
 /* header style
 ===================================*/
 
-.header{
-  position:relative;
+.header {
+    position: relative;
 }
 
 .header-inner {
@@ -26,21 +26,23 @@
     background-color: #fcfaf8;
 }
 
-.nav-item .nav-link{
+.nav-item .nav-link {
     display: block;
     line-height: 36px;
-	text-transform:capitalize;
+    text-transform: capitalize;
     font-size: 16px;
-	font-weight:400;
-    color:#000;
+    font-weight: 400;
+    color: #000;
     transition: 0.15s;
 }
-    .nav-item .nav-link:hover{
+
+    .nav-item .nav-link:hover {
         cursor: pointer;
     }
-    .my-navbar:hover {
-        background-color: #ffefe5;
-    }
+
+.my-navbar:hover {
+    background-color: #ffefe5;
+}
 
 
 
@@ -60,8 +62,8 @@
 ===================================*/
 
 
-.section-container-items{
-  padding:100px 0px 0px 0px;
+.section-container-items {
+    padding: 100px 0px 0px 0px;
 }
 
 
@@ -75,24 +77,24 @@
 /* footer css design
 ===================================*/
 
-footer{
+footer {
     width: 100%;
     text-align: right;
 }
 
-footer p{
-    font-size: 14px;
-    font-weight: 400;
-    color: #fff;
-    opacity: 0.4;
-    margin-top: 3px;
-    letter-spacing: 0.12px;
-}
+    footer p {
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        opacity: 0.4;
+        margin-top: 3px;
+        letter-spacing: 0.12px;
+    }
 
-footer p a{
-    color: #fff;
-    text-decoration: underline;
-}
+        footer p a {
+            color: #fff;
+            text-decoration: underline;
+        }
 
 
 
@@ -108,13 +110,14 @@ footer p a{
 
 /* search box model css design
 ===================================*/
-@keyframes fadeIn{
-0%{
-  opacity:0;
-}
-100%{
-  opacity:1;
-}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 
@@ -134,6 +137,7 @@ button, input {
 .btn-color-custom {
     background-color: #ffefe5;
 }
+
 .span-color-validation {
     color: #dc4c3e;
 }
@@ -146,27 +150,63 @@ button, input {
 /* small screen device responsive 
 ===================================*/
 
-@media  only screen and (min-width:1200px){
-.nav-item > .nav-link{
-   padding:5px 20px!important;
-   display:block;
-}
+@media only screen and (min-width:1200px) {
+    .nav-item > .nav-link {
+        padding: 5px 20px !important;
+        display: block;
+    }
 }
 
-@media  only screen and (max-width:992px){
+@media only screen and (max-width:992px) {
     .header-inner {
         background-color: #fcfaf8;
         width: 100% !important;
     }
+}
 
+@media only screen and (max-width:576px) {
+    .search-model-form input {
+        width: 257px !important;
+        font-size: 20px !important;
+        border: none;
+        border-bottom: 2px solid #333;
+        background: none;
+        color: #999;
+    }
 }
-@media  only screen and (max-width:576px){
-.search-model-form input {
-    width: 257px!important;
-    font-size: 20px!important;
-    border: none;
-    border-bottom: 2px solid #333;
-    background: none;
-    color: #999;
+
+/* login form
+===================================*/
+/* Change color for elements */
+.container.w-50 h1,
+.text-center a {
+    color: #dc4c3e;
 }
+
+/* Change color for social media button icons */
+.btn-link i {
+    color: #dc4c3e;
 }
+
+/* Change background color of checkbox when checked */
+.form-check-input:checked {
+    background-color: #dc4c3e;
+}
+
+    /* Change inner border color of checkbox when checked */
+    .form-check-input:checked::before {
+        border-color: #dc4c3e;
+    }
+
+    /* Change color for checkbox and its label when checked */
+    .form-check-input:checked + .form-check-label::before {
+        background-color: #dc4c3e !important;
+        border-color: #dc4c3e !important;
+    }
+
+/* Change border color of checkbox when checked */
+.form-check-input:checked {
+    border-color: #dc4c3e !important;
+}
+
+
