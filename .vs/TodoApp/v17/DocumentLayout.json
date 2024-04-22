@@ -1,54 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\",
+  "WorkspaceRootPath": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\wwwroot\\js\\html-interaction.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\wwwroot\\js\\html-interaction.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\_github\\todoapp\\todo\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\views\\home\\addoredit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\home\\addoredit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\_github\\todoapp\\todo\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\asp.net\\todoapp\\todo\\views\\home\\viewall.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\home\\viewall.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\_github\\todoapp\\todo\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\asp.net\\todoapp\\todo\\wwwroot\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\wwwroot\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\models\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\models\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\models\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\models\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\models\\dtos\\todolistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\models\\dtos\\todolistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\todo\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|c:\\users\\84859\\workspace\\_github\\todoapp\\todo\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B66E646-A5CA-4C5D-A803-FC1E67FFE219}|Todo\\Todo.csproj|solutionrelative:todo\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,114 +26,65 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1641,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Filters.cs",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\Filters.cs",
-              "RelativeDocumentMoniker": "Todo\\Models\\Filters.cs",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\Filters.cs",
-              "RelativeToolTip": "Todo\\Models\\Filters.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBIAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T02:09:12.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ToDoListViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\DTOS\\ToDoListViewModel.cs",
-              "RelativeDocumentMoniker": "Todo\\Models\\DTOS\\ToDoListViewModel.cs",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\DTOS\\ToDoListViewModel.cs",
-              "RelativeToolTip": "Todo\\Models\\DTOS\\ToDoListViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T01:54:33.69Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "script.js",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\wwwroot\\js\\script.js",
-              "RelativeDocumentMoniker": "Todo\\wwwroot\\js\\script.js",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\wwwroot\\js\\script.js",
-              "RelativeToolTip": "Todo\\wwwroot\\js\\script.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-01T01:11:41.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Program.cs",
-              "RelativeDocumentMoniker": "Todo\\Program.cs",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Program.cs",
-              "RelativeToolTip": "Todo\\Program.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAqwA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T00:59:58.167Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AddOrEdit.cshtml",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\AddOrEdit.cshtml",
-              "RelativeDocumentMoniker": "Todo\\Views\\Home\\AddOrEdit.cshtml",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\AddOrEdit.cshtml",
-              "RelativeToolTip": "Todo\\Views\\Home\\AddOrEdit.cshtml",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAACkAAAAsAAAA",
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Todo\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "Todo\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-01T00:50:47.604Z",
+              "WhenOpened": "2024-04-22T07:09:35.347Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "style.css",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\wwwroot\\css\\style.css",
-              "RelativeDocumentMoniker": "Todo\\wwwroot\\css\\style.css",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\wwwroot\\css\\style.css",
-              "RelativeToolTip": "Todo\\wwwroot\\css\\style.css",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABkAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-04-01T00:41:09.354Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "html-interaction.js",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\wwwroot\\js\\html-interaction.js",
-              "RelativeDocumentMoniker": "Todo\\wwwroot\\js\\html-interaction.js",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\wwwroot\\js\\html-interaction.js",
-              "RelativeToolTip": "Todo\\wwwroot\\js\\html-interaction.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-01T00:24:50.066Z",
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "Todo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "Todo\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAgwEAAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T07:09:33.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "Todo\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "Todo\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAkwHUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T07:02:32.12Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Todo\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Todo\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAALIAAAAAAAAAAADwv8oAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T02:39:46.213Z",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Todo\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "Todo\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T07:02:19.557Z",
               "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 1584,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -182,58 +101,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ToDo.cs",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\ToDo.cs",
-              "RelativeDocumentMoniker": "Todo\\Models\\ToDo.cs",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Models\\ToDo.cs",
-              "RelativeToolTip": "Todo\\Models\\ToDo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAABLAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T00:51:37.917Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Todo\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Todo\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAUwFQAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-31T16:54:33.192Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ViewAll.cshtml",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\ViewAll.cshtml",
-              "RelativeDocumentMoniker": "Todo\\Views\\Home\\ViewAll.cshtml",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\ViewAll.cshtml",
-              "RelativeToolTip": "Todo\\Views\\Home\\ViewAll.cshtml",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAAB4AAABdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-31T16:48:51.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Todo\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Todo\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAiwEoAAAB+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-31T16:46:15.39Z",
-              "EditorCaption": ""
             }
           ]
         }

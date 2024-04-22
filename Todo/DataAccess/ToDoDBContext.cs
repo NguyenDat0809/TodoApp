@@ -1,10 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Todo.Models;
 
-namespace Todo.Models.DataAccess
+namespace Todo.DataAccess
 {
-    public class ToDoDBContext(DbContextOptions<ToDoDBContext> options) : DbContext(options)
+    public class ToDoDBContext : IdentityDbContext
     {
+        public ToDoDBContext(DbContextOptions<ToDoDBContext> options) : base(options)
+        {
+
+        }
         public DbSet<ToDo> ToDos { get; set; }
         public DbSet<Status> Statuses { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -18,6 +23,7 @@ namespace Todo.Models.DataAccess
         //rewrite it
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Category>().HasData(
                 new Category() { CategoryId = "work", Name = "Work" },
                 new Category() { CategoryId = "home", Name = "Home" },

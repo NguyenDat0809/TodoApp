@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using Todo.DataAccess;
 using Todo.Models;
-using Todo.Models.DataAccess;
 using static Todo.Helper;
 
 namespace Todo.Controllers

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Todo.csproj": {}
+    "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Todo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Todo.csproj": {
+    "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Todo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Todo.csproj",
+        "projectUniqueName": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Todo.csproj",
         "projectName": "Todo",
-        "projectPath": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\Todo.csproj",
+        "projectPath": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\Todo.csproj",
         "packagesPath": "C:\\Users\\84859\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\84859\\workspace\\ASP.NET\\TodoApp\\Todo\\obj\\",
+        "outputPath": "C:\\Users\\84859\\Workspace\\_GITHUB\\TodoApp\\Todo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\84859\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,25 +45,45 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [
