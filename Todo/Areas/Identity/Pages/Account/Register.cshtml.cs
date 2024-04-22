@@ -25,8 +25,10 @@ namespace Todo.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
+
         private readonly IUserStore<IdentityUser> _userStore;
         private readonly IUserEmailStore<IdentityUser> _emailStore;
+
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
@@ -116,28 +118,47 @@ namespace Todo.Areas.Identity.Pages.Account
             //Ví dụ: Url.Content("~/image") -> tạo ra đường dẫn mới đến image
             returnUrl ??= Url.Content("~/"); 
 
+            //lấy ra danh sách AuthenticationScheme đã được khai báo ở program.cs
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
             if (ModelState.IsValid)
             {
+                //method được khởi tạo ở phía dưới -> trả về 1 instance của IdentityUser
                 var user = CreateUser();
 
+                //sau khi tạo user sẽ cập nhật UserName và Email cho user
+                //cập nhật UserName thông qua instance của IUserStore
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+                //cập nhật Email thông qua instance của IUserEmailStore (một class extends từ IUserStore)
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                //CancellationToken - sử dụng để thông báo hủy hành động
+                //TẠI SAO KHÔNG TRUY CẬP TRỰC TIẾP USER RỒI CẬP NHẬT USERNAME VÀ EMAIL ???
+                //-> đảm bảo tính bảo mật,...
+
+                //tạo và lưu trữ user vào db
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
 
+                    //lấy user id ra
                     var userId = await _userManager.GetUserIdAsync(user);
+
+                    //lấy ra một token ngẫu nhiên để confirm email từ user
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    //mã code được mã hóa bằng Base64 để đảm bảo an toàn khi truyền qua URL
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+
+                    //Url.Page ~~ Url.Action
+                    //tạo một url đến page comfirmEmail gồm các option dc chỉnh như dưới
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
+                    //interface cung ấp API hỗ trợ Identity gửi email confirm và reset
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
@@ -148,6 +169,7 @@ namespace Todo.Areas.Identity.Pages.Account
                     else
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
+                        //LocalRedirect - gửi người dùng về với status code 302 - Found HTTP
                         return LocalRedirect(returnUrl);
                     }
                 }
@@ -161,10 +183,17 @@ namespace Todo.Areas.Identity.Pages.Account
             return Page();
         }
 
+        /// <summary>
+        /// Hàm tạo ra 1 instance cho IdentityUser
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         private IdentityUser CreateUser()
         {
             try
             {
+                //System.Activator cho phép tạo 1 instance của 1 class với độ tùy biến cao 
+                //Exception hay gặp của hàm CreateInstance() là MissingMethodException -> trong trường hợp class đó ko tồn tại
                 return Activator.CreateInstance<IdentityUser>();
             }
             catch
@@ -175,12 +204,18 @@ namespace Todo.Areas.Identity.Pages.Account
             }
         }
 
+        /// <summary>
+        /// Hàm trả về 1 instance cho IUserEmailStore
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotSupportedException"></exception>
         private IUserEmailStore<IdentityUser> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)
             {
                 throw new NotSupportedException("The default UI requires a user store with email support.");
             }
+            //ép kiểu IUserStore instance qua IUserEmailStore rồi trả về
             return (IUserEmailStore<IdentityUser>)_userStore;
         }
     }
